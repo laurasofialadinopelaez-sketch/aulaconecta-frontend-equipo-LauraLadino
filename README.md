@@ -20,13 +20,13 @@ Páginas y módulos planeados para la primera fase:
 
 ---
 
-## 👥 Equipo de Trabajo
+## Equipo de Trabajo
 
 | Nombre / Iniciales | Usuario de GitHub | Rol en el Proyecto |
 | :--- | :--- | :--- |
 | **Laura Ladino** | [@laurasofialadinopelaez-sketch](https://github.com/laurasofialadinopelaez-sketch) | Responsable de la rama & Frontend |
-| **Integrante 2** | `@usuario2` | Responsable del repositorio |
-| **Integrante 3** | `@usuario3` | Revisor(a) y Auditor(a) |
+| **Integrante 2** | [@laurasofialadinopelaez-sketch](https://github.com/laurasofialadinopelaez-sketch) | Responsable del repositorio |
+| **Integrante 3** | [@laurasofialadinopelaez-sketch](https://github.com/laurasofialadinopelaez-sketch) | Revisor(a) y Auditor(a) |
 
 ---
 
