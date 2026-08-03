@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arena Bet Gaming</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Megrim&family=Turret+Road:wght@200;300;400;500;700;800&family=Zen+Dots&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold text-neon" href="#">
+                <span class="glow">Arena Bet Gaming</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#hero">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#partidas">Partidas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#historial">Historial</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#ranking">Ranking</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="#carritoPuntos">Comprar Puntos</a></li>
+                    <li class="nav-item"> <button class="btn btn-outline-neon ms-3" id="temaBtn">Cambiar Tema</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Principal -->
+    <section id="hero" class="hero-section text-center py-5">
+        <div class="container">
+            <h1 class="display-4 fw-bold text-neon glow">Bienvenido a Arena Bet Gaming</h1>
+            <p class="lead text-light">Predice el futuro de los eSports y gana puntos ficticios en emocionantes
+                apuestas.</p>
+            <div class="mt-4"><span class="badge bg-neon text-dark fs-5">¡Únete a la acción!</span></div>
+        </div>
+    </section>
+
+    <!-- Dashboard de Puntos -->
+    <section class="dashboard py-4 bg-glass">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <h3 class="text-neon">Puntos Actuales</h3>
+                    <p id="puntosActuales" class="fs-2 fw-bold text-light"></p>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="text-neon">Nivel</h3>
+                    <p id="nivelActual" class="fs-2 fw-bold text-light"></p>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="text-neon">Progreso</h3>
+                    <div class="progress mt-2">
+                        <div id="barraProgreso" class="progress-bar bg-neon" role="progressbar" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <div id="alertaSinPuntos" class="mt-4 d-none">
+                    <div class="alert alert-danger">No tienes más puntos disponibles.</div>
+                    <button onclick="scrollToCarrito()" class="btn btn-outline-neon">Adquirir más puntos</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="partidas" class="py-5">
+        <div class="container">
+            <h2 class="text-center text-neon glow mb-4">Partidas Disponibles</h2>
+            <div class="mb-3">
+                <select id="filtroJuego" class="form-select bg-glass text-light">
+                    <option value="">Todos los Juegos</option>
+                </select>
+            </div>
+            <div id="partidasContainer" class="row">
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-glass form-section-with-image">
+        <div class="container">
+            <h2 class="text-center text-neon glow mb-4">Realizar Apuesta</h2>
+            <div class="row justify-content-center align-items-start form-image-section gx-4 gy-4">
+                <div class="col-lg-7 form-center-column">
+                    <form id="apuestaForm" class="apuesta-form-grid">
+                        <div class="form-field">
+                            <input type="text" id="jugadorNombre" class="form-control bg-dark text-light"
+                                placeholder="Tu Nombre" required>
+                        </div>
+                        <div class="form-field">
+                            <select id="partidaSelect" class="form-select bg-dark text-light" required>
+                                <option value="">Seleccionar Partida</option>
+                            </select>
+                        </div>
+                        <div class="form-field">
+                            <select id="equipoSelect" class="form-select bg-dark text-light" required>
+                                <option value="">Seleccionar Equipo</option>
+                            </select>
+                        </div>
+                        <div class="form-field">
+                            <input type="number" id="puntosApostar" class="form-control bg-dark text-light"
+                                placeholder="Puntos" min="1" required>
+                        </div>
+                        <div class="form-field form-field-button">
+                            <button type="submit" class="btn btn-neon w-100">Apostar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="historial" class="py-5">
+        <div class="container">
+            <h2 class="text-center text-neon glow mb-4">Historial de Apuestas</h2>
+            <div class="row mb-3">
+                <div class="col-md-3">
+                    <select id="filtroResultado" class="form-select bg-glass text-light">
+                        <option value="">Todos los Resultados</option>
+                        <option value="Ganó">Ganó</option>
+                        <option value="Perdió">Perdió</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <input type="text" id="buscarJugador" class="form-control bg-glass text-light"
+                        placeholder="Buscar Jugador">
+                </div>
+                <div class="col-md-3">
+                    <select id="ordenarGanancia" class="form-select bg-glass text-light">
+                        <option value="">Ordenar por Ganancia</option>
+                        <option value="asc">Menor a Mayor</option>
+                        <option value="desc">Mayor a Menor</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <button id="reiniciarBtn" class="btn btn-outline-neon w-100">Reiniciar Juego</button>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-dark table-striped">
+                    <thead>
+                        <tr>
+                            <th>Jugador</th>
+                            <th>Juego</th>
+                            <th>Partida</th>
+                            <th>Equipo Elegido</th>
+                            <th>Ganador Real</th>
+                            <th>Puntos Apostados</th>
+                            <th>Resultado</th>
+                            <th>Ganancia/Pérdida</th>
+                            <th>Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody id="historialBody">
+                        <!-- se renderiza -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="ranking" class="py-5 bg-glass">
+        <div class="container">
+            <h2 class="text-center text-neon glow mb-4">Ranking Gamer</h2>
+            <div class="row">
+                <div class="col-md-12">
+                    <ul id="rankingList" class="list-group">
+                        <!-- se renderiza -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="modal fade" id="resultadoModal" tabindex="-1" aria-labelledby="resultadoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header">
+                    <h5 class="modal-title text-neon" id="resultadoModalLabel">Resultado de la Apuesta</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="resultadoTexto"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-neon" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <section id="carritoPuntos" class="py-5 bg-glass">
+        <div class="container text-center">
+
+            <h2 class="text-neon glow mb-5">Comprar Puntos</h2>
+
+            <div class="row g-4 mb-5" id="planesContainer">
+
+                <div class="col-md-3">
+                    <div class="card plan-card text-center h-100">
+                        <div class="card-body">
+                            <h3 class="text-neon">Bronce</h3>
+                            <h1 class="fw-bold">500</h1>
+                            <p>Puntos Gamer</p>
+                            <h4>$25.000 COP</h4>
+                            <button class="btn btn-neon w-100"
+                                onclick="agregarAlCarrito('Bronce',500,25000)">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card plan-card text-center h-100">
+                        <div class="card-body">
+
+                            <h3 class="text-neon">Plata</h3>
+
+                            <h1 class="fw-bold">1500</h1>
+
+                            <p>Puntos Gamer</p>
+
+                            <h4>$75.000 COP</h4>
+
+                            <button class="btn btn-neon w-100" onclick="agregarAlCarrito('Plata',1500,75000)">
+                                Agregar
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card plan-card text-center h-100">
+                        <div class="card-body">
+
+                            <h3 class="text-neon">Oro</h3>
+
+                            <h1 class="fw-bold">3000</h1>
+
+                            <p>Puntos Gamer</p>
+
+                            <h4>$150.000 COP</h4>
+
+                            <button class="btn btn-neon w-100"
+                                onclick="agregarAlCarrito('Oro',3000,150000)">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card plan-card text-center h-100">
+                        <div class="card-body">
+                            <h3 class="text-neon">Diamante</h3>
+                            <h1 class="fw-bold">5000</h1>
+                            <p>Puntos Gamer</p>
+                            <h4>$250.000 COP</h4>
+                            <button class="btn btn-neon w-100" onclick="agregarAlCarrito('Diamante',5000,250000)">Agregar</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center mb-5">
+                <div class="col-md-7">
+                    <div class="card bg-dark text-light border-neon">
+                        <div class="card-body">
+                            <h3 class="text-neon mb-4">Carrito de Compras</h3>
+                            <div id="carritoLista">
+                                <p class="text-secondary">No hay planes agregados</p>
+                            </div>
+                            <hr>
+
+                            <div class="d-flex justify-content-between">
+                                <h5>Total Puntos:</h5>
+                                <h5 id="totalPuntos">0</h5>
+                            </div>
+
+                            <div class="d-flex justify-content-between mb-4">
+                                <h5>Total Precio:</h5>
+                                <h5>$<span id="totalPrecio">0</span> COP</h5>
+                            </div>
+                            <button class="btn btn-neon w-100" onclick="mostrarFormularioCompra()">Comprar
+                                Ahora</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center d-none" id="formCompra">
+                <div class="col-md-5">
+                    <div class="card bg-dark border-neon">
+                        <div class="card-body">
+                            <h3 class="text-neon mb-4">
+                                Método de Pago
+                            </h3>
+
+                            <input type="text" id="numTarjeta" class="form-control bg-dark text-light mb-3"
+                                placeholder="Número de tarjeta" maxlength="19" inputmode="numeric">
+
+                            <input type="text" id="nombreTitular" class="form-control bg-dark text-light mb-3"
+                                placeholder="Nombre del titular">
+
+                            <div class="row">
+                                <div class="col-6">
+                                    <input type="text" id="fechaVencimiento"
+                                        class="form-control bg-dark text-light mb-3" placeholder="MM/AA" maxlength="5"
+                                        inputmode="numeric">
+                                </div>
+
+                                <div class="col-6">
+                                    <input type="password" id="cvv" class="form-control bg-dark text-light mb-3"
+                                        placeholder="CVV" maxlength="4" inputmode="numeric">
+                                </div>
+                            </div>
+
+                            <button onclick="maspuntos()" class="btn btn-neon w-100">
+                                Confirmar Compra
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Arena Bet Gaming</h5>
+                    <p>En Arena Bet Gaming puedes apostar por tus equipos favoritos en los juegos más populares.</p>
+                    <div class="d-flex gap-3">
+                        <i class="bi bi-facebook fs-4">facebook</i>
+                        <i class="bi bi-instagram fs-4">instagram</i>
+                        <i class="bi bi-twitter fs-4">twitter</i>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Enlaces Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#partidas" class="text-white text-decoration-none">Partidas</a></li>
+                        <li><a href="#historial" class="text-white text-decoration-none">Historial</a></li>
+                        <li><a href="#ranking" class="text-white text-decoration-none">Ranking</a></li>
+                        <li><a href="#carritoPuntos" class="text-white text-decoration-none">Comprar Puntos</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">© 2026 Arena Bet Gaming. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

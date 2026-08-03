@@ -1,0 +1,337 @@
+:root {
+    --neon-1: #00ffff;
+    --neon-2: #b36ef3;
+    --neon-3: #4d0d7e;
+    --neon-4: #023bb7;
+    --bg-dark: #0a0a0a;
+    --bg-glass: rgba(255, 255, 255, 0.1);
+    --text-light: #ffffff;
+    --shadow-neon: 0 0 10px var(--neon-1), 0 0 20px var(--neon-1), 0 0 30px var(--neon-1);
+}
+
+.tema-alternativo {
+    --neon-1: #a4fb9f;
+    --neon-2: #c1e700;
+    --neon-3: #ffa406;
+    --neon-4: #0cc31290;
+    --shadow-neon: 0 0 10px var(--neon-1), 0 0 20px var(--neon-1), 0 0 30px var(--neon-1);
+}
+
+body {
+    background: linear-gradient(135deg, var(--bg-dark) 0%, #1a1a1a 100%);
+    color: var(--text-light);
+    /* font-family: 'Arial', sans-serif; */
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h5, span{
+    font-family: "Megrim", system-ui;
+}
+
+p, a, option, select, input, button {
+    font-family: "Turret Road", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+.glow {
+    text-shadow: var(--shadow-neon);
+}
+
+.text-neon {
+    color: var(--neon-1);
+}
+
+.bg-neon {
+    background-color: var(--neon-1);
+}
+
+.btn-neon {
+    background-color: var(--neon-1);
+    border: 2px solid var(--neon-1);
+    color: var(--bg-dark);
+    transition: all 0.3s ease;
+}
+
+.btn-neon:hover {
+    background-color: var(--bg-dark);
+    color: var(--neon-1);
+    box-shadow: var(--shadow-neon);
+}
+
+.btn-outline-neon {
+    border: 2px solid var(--neon-1);
+    color: var(--neon-1);
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-neon:hover {
+    background-color: var(--neon-1);
+    color: var(--bg-dark);
+    box-shadow: var(--shadow-neon);
+}
+
+.hero-section {
+    background: linear-gradient(45deg, var(--neon-2), var(--neon-4));
+    background-size: 400% 400%;
+    animation: gradientShift 5s ease infinite;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.bg-glass {
+    background: var(--bg-glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Cards de Partidas */
+.card {
+    background: var(--bg-glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-neon);
+}
+
+.card-title {
+    color: var(--neon-1);
+}
+
+.card-text {
+    color: var(--text-light);
+}
+
+.card-img-top {
+    max-height: 150px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.form-control, .form-select {
+    border: 1px solid var(--neon-1);
+    background: rgba(0, 0, 0, 0.5);
+    color: var(--text-light);
+    margin-bottom: 15px
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--neon-1);
+    box-shadow: 0 0 5px var(--neon-1);
+}
+
+.table-dark {
+    background: var(--bg-glass);
+    backdrop-filter: blur(10px);
+}
+
+.table-dark th {
+    color: var(--neon-1);
+}
+
+.list-group-item {
+    background: var(--bg-glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-light);
+}
+
+.modal-content {
+    background: var(--bg-glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.progress {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, var(--neon-1), var(--neon-2), var(--neon-3), var(--neon-4));
+}
+
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    .card {
+        margin-bottom: 0.5rem;
+    }
+}
+
+.form-section-with-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.form-section-with-image::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=900&q=80") center/cover no-repeat;
+    opacity: 0.06;
+    pointer-events: none;
+}
+
+.form-image-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.form-center-column {
+    max-width: 720px;
+    width: 100%;
+}
+
+.apuesta-form-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-field {
+    width: 100%;
+}
+
+.form-field-button {
+    display: flex;
+}
+
+.form-field-button .btn {
+    width: 100%;
+}
+
+@media (max-width: 991px) {
+    .apuesta-form-grid {
+        flex-direction: column;
+    }
+    .form-field-button {
+        flex: 1 1 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .form-section-with-image::before {
+        opacity: 0.18;
+    }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+
+.win-effect{
+    border: 2px solid #00ff88;
+    box-shadow:
+        0 0 15px #00ff88,
+        0 0 30px #00ff88,
+        0 0 60px rgba(0,255,136,0.8);
+    animation: neonWin 1s infinite alternate;
+}
+
+.lose-effect{
+    border: 2px solid #ff003c;
+    box-shadow:
+        0 0 15px #ff003c,
+        0 0 30px #ff003c,
+        0 0 60px rgba(255,0,60,0.8);
+    animation: neonLose 1s infinite alternate;
+}
+
+@keyframes neonWin{
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.02);
+    }
+}
+
+@keyframes neonLose{
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(0.98);
+    }
+}
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-control::placeholder{
+
+    color: rgba(255, 255, 255, 0.7);
+    opacity: 1;
+}
+
+.form-control::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.form-control:-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.form-control:focus::placeholder, select:focus {
+    /* color: rgba(0, 255, 255, 0.8); */
+    color: var(--neon-1);
+}
+
+.form-control::placeholder, select {
+    color: var(--neon-1);
+    opacity: 0.8;
+    text-shadow: 0 0 5px var(--neon-1);
+}
+
+#historial .form-control:focus {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: var(--text-light);
+    border-color: var(--neon-1);
+    box-shadow: 0 0 8px var(--neon-1);
+}
+
+
+.plan-card{
+    background: rgba(20,20,20,0.9);
+    border: 2px solid var(--neon-1);
+    border-radius: 20px;
+    color: var(--text-light);
+    transition: 0.3s;
+    box-shadow: 0 0 15px rgba(0,255,225,0.2);
+}
+
+.plan-card:hover{
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: var(--shadow-neon);
+}
+
+.plan-card h1{
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--neon-1);
+}
