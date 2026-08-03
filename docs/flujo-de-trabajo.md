@@ -1,10 +1,10 @@
-# 🔄 Flujo de Trabajo y Registro de Comandos
+# Flujo de Trabajo y Registro de Comandos
 
 En este documento se detalla la secuencia lógica de trabajo en Git y GitHub, los riesgos que se evitan en cada etapa y la observación del comportamiento de los comandos principales en el simulador.
 
 ---
 
-## 📌 1. Secuencia de Trabajo y Riesgos Evitados
+## 1. Secuencia de Trabajo y Riesgos Evitados
 
 1. **Crear repositorio**
    * **Propósito:** Definir el espacio centralizado en la nube para alojar el proyecto.
@@ -36,7 +36,7 @@ En este documento se detalla la secuencia lógica de trabajo en Git y GitHub, lo
 
 ---
 
-## 📊 2. Registro de Comandos y Observaciones (Learn Git Branching)
+## 2. Registro de Comandos y Observaciones (Learn Git Branching)
 
 ### 1. `git commit`
 * **¿Qué nodo nuevo apareció y dónde quedó apuntando la rama?**
