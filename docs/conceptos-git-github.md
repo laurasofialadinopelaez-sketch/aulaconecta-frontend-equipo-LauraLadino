@@ -1,49 +1,51 @@
-COMPROBACIÓN CONCEPTUAL
+# Comprobación Conceptual y Reto Rápido de Secuencia
 
-¿Qué puede hacer Git aunque GitHub no exista?
+## Comprobación Conceptual
 
-	El Git de lo que se encarga es de mantener un control de las versiones y cambios de un proyecto, los cuales quedan guardados en un computador, funcionando de esta forma sin GitHub.
+### ¿Qué puede hacer Git aunque GitHub no exista?
+Git se encarga de mantener un control de las versiones y cambios de un proyecto localmente, los cuales quedan guardados en el computador, funcionando perfectamente de esta forma sin necesidad de GitHub.
 
-¿Por qué una rama reduce el riesgo de dañar main?
-	
-	Se reduce el riesgo ya que los cambios hechos no afectan directamente al main, ya que esta puede mantener los cambios sin que se modifique el main en caso de que algo no funcione.
+---
 
-¿Qué diferencia existe entre guardar un archivo y crear un commit?
+### ¿Por qué una rama reduce el riesgo de dañar `main`?
+Se reduce el riesgo ya que los cambios realizados no afectan directamente a la rama `main`. Permite trabajar y mantener las modificaciones en una línea paralela sin alterar la versión estable en caso de que algo no funcione.
 
-	El commit es un registro donde se explican los cambios realizados, mientras que guardar es para la implementación/actualización de cambios en el proyecto.
+---
 
-¿Por qué un pull request no es lo mismo que un merge?
+### ¿Qué diferencia existe entre guardar un archivo y crear un commit?
+El **commit** es un registro histórico identificable donde se explican y confirman los cambios realizados, mientras que **guardar** un archivo solo actualiza el estado de los cambios en el disco local sin crear una foto en el historial de versiones.
 
-	Pull request es para que se evalúe y se hagan pruebas para reconocer si una rama puede ser incorporada al main, mientras que el merge es tras hacer la revisión de un rama para que esta finalmente sea incorporada en el main.
+---
 
-Una evalúa la rama, el otro la integra.
+### ¿Por qué un Pull Request no es lo mismo que un Merge?
+Un **Pull Request** es una solicitud para que se evalúen, comenten y prueben las propuestas de una rama antes de ser incorporadas a `main`. El **Merge**, en cambio, es la acción formal de integrar esos cambios aceptados a la rama principal. *(Uno evalúa la rama, el otro la integra).*
 
-¿Qué evidencia permite saber quién cambió algo y por qué?
+---
 
-	El que permite saber quien hizo un cambio es el commit, el cual contiene la describe la acción, junto con el resultado, mientras que también esta contiene la información del usuario, el diff es la evidencia de cambios, marcados de color rojo o verde si algo a sido borrado o agregado.
+### ¿Qué evidencia permite saber quién cambió algo y por qué?
+El **commit** permite saber quién hizo un cambio, ya que contiene la información del usuario (autor) y el mensaje que describe el propósito de la acción. Adicionalmente, el **`diff`** sirve como evidencia visual de los cambios, marcando en rojo o verde lo que ha sido borrado o agregado.
 
-RETO RÁPIDO DE SECUENCIAS
-crear repositorio
-	Evita que haya desorden del proyecto sin un historial, donde se pueden perder archivos o compartir versiones errores.
+---
 
-crear rama
-	Evita que se dañe la versión que funciona de forma adecuada del proyecto mientras se prueba y hacen cambios.
+## Reto Rápido de Secuencia
 
-hacer commits
-	Evita la pérdida de avances, la falta de información sobre quien hizo cambios; además de no permitir volver a un punto anterior en caso de haber errores.
+1. **Crear repositorio**
+   * **Riesgo que evita:** Evita el desorden en el proyecto y trabajar sin un historial centralizado, previniendo la pérdida de archivos o el compartir versiones erróneas.
 
-abrir pull request
-	Evita que haya una integración de una versión al main sin pruebas, también para que el equipo esté enterado de las modificaciones propuestas.
+2. **Crear rama**
+   * **Riesgo que evita:** Evita que se dañe o rompa la versión funcional del proyecto (`main`) mientras se prueban e implementan nuevos cambios.
 
-revisar
-	Evita que se pasen por alto errores de código, de ortografía o inconsistencias en el proyecto junto a fugas de información privada o sensible.
+3. **Hacer commits**
+   * **Riesgo que evita:** Evita la pérdida de avances y la falta de información sobre quién hizo cambios, permitiendo volver a puntos anteriores en el historial en caso de errores.
 
-corregir observaciones.
-	Evita que sea ignorada la retroalimentación e integrar cambios que sean deficientes o incompletos al proyecto final.
+4. **Abrir Pull Request**
+   * **Riesgo que evita:** Evita la integración directa de cambios a `main` sin antes realizar pruebas y dar visibilidad al equipo sobre las modificaciones propuestas.
 
-fusionar
-	Evita que se acumulen muchas ramas que no funcionen o estén desactualizadas que generan conflictos difíciles de integración en un futuro.
+5. **Revisar**
+   * **Riesgo que evita:** Evita que se pasen por alto errores de código, ortografía o inconsistencias en el proyecto, así como la fuga de información privada o sensible.
 
+6. **Corregir observaciones**
+   * **Riesgo que evita:** Evita que se ignore la retroalimentación entregada por el equipo e integrar cambios deficientes o incompletos al proyecto final.
 
-
-flujo-de-trabajo.md
+7. **Fusionar (`merge`)**
+   * **Riesgo que evita:** Evita que se acumulen ramas desactualizadas o en desuso, reduciendo el riesgo de generar conflictos de integración difíciles de resolver en el futuro.
