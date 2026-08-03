@@ -1,20 +1,20 @@
-# 🏫 AulaConecta - Frontend
+# AulaConecta - Frontend
 
 **AulaConecta** es una plataforma orientada a conectar a estudiantes y docentes en un entorno digital interactivo y accesible.
 
 ---
 
-## 🎯 Problema que Resuelve y Objetivo
+## Problema que Resuelve y Objetivo
 
 * **Problema:** La falta de un canal centralizado, intuitivo y colaborativo que facilite el acceso a recursos educativos y herramientas de interacción en línea.
 * **Objetivo del Front-end:** Construir una interfaz web moderna, responsiva y fácil de usar que prepare la ruta tecnológica del proyecto y permita gestionar vistas clave como la página principal y el carrito de compras.
 
 ---
 
-## 📦 Alcance Inicial
+## Alcance Inicial
 
 Páginas y módulos planeados para la primera fase:
-1. **Inicio (`index.html`):** Vista principal de bienvenida con integración de navegación y la base del **Carrito de Compras** 🛒.
+1. **Inicio (`index.html`):** Vista principal de bienvenida con integración de navegación y la base del **Carrito de Compras**.
 2. **Módulo de Registro / Login:** Interfaz de acceso para usuarios.
 3. **Catálogo / Cursos:** Espacio interactivo de consulta.
 
@@ -30,7 +30,7 @@ Páginas y módulos planeados para la primera fase:
 
 ---
 
-## 🛠️ Ruta Tecnológica Prevista
+## Ruta Tecnológica Prevista
 
 * **HTML5:** Estructuración semántica de las páginas.
 * **CSS3:** Estilos responsivos y diseño visual.
@@ -39,7 +39,7 @@ Páginas y módulos planeados para la primera fase:
 
 ---
 
-## 🤝 Acuerdo de Trabajo
+## Acuerdo de Trabajo
 
 * **Manejo de Ramas:** La rama `main` representa la versión integrada y estable. Todo cambio se realiza en ramas secundarias (ej: `feature-presentacion`).
 * **Mensajes de Commit:** Deben ser explicativos y seguir el estándar (ej. `docs: presenta objetivo y alcance de AulaConecta`). No se aceptan mensajes como "cambio", "listo" o "prueba".
@@ -47,7 +47,7 @@ Páginas y módulos planeados para la primera fase:
 
 ---
 
-## 📋 Criterios de Calidad para Fusionar (Pull Request)
+## Criterios de Calidad para Fusionar (Pull Request)
 
 1. **Sin Información Sensible:** No incluir contraseñas, tokens, teléfonos ni datos personales.
 2. **Commit Coherente:** Cambios con un propósito claro y mensajes estructurados.
@@ -57,7 +57,7 @@ Páginas y módulos planeados para la primera fase:
 
 ---
 
-## 📚 Fuentes Consultadas
+## Fuentes Consultadas
 
 * [Learn Git Branching en Español](https://learngitbranching.js.org/?locale=es_ES)
 * [Guía de inicio rápido Hello World - GitHub Docs](https://docs.github.com/es/get-started/start-your-journey/hello-world)
